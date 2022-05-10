@@ -1,0 +1,40 @@
+<h1>編輯書本</h1>
+
+<% if @book.errors.any? %>
+    <h2>
+        <% @book.errors.full_messages.each do |message| %>
+        <li>
+            <%= message %>
+        </li>
+        <% end %>
+    </h2>
+<% end %>
+
+
+<%= form_with(model: @book) do |form| %>
+
+<div>
+    <%= form.label :name, '書名' %>
+    <%= form.text_field :name %>
+</div>
+<div>
+    <%= form.label :date, '出版日期' %>
+    <%= form.date_field :date %>
+</div>
+<div>
+    <%= form.label :price, '售價' %>
+    <%= form.number_field :price %>
+</div>
+<div>
+    <%= form.label :pages, '頁數' %>
+    <%= form.number_field :pages %>
+</div>
+<div>
+    <%= form.label :isbn, 'isbn' %>
+    <%= form.number_field :isbn %>
+</div>
+<div>
+    <%= form.submit '更新' %>
+</div>
+
+<% end %>
