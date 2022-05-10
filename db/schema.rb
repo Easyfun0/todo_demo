@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2022_05_08_064708) do
   end
 
   create_table "todo_items", force: :cascade do |t|
-    t.text "description"
+    t.text "description", null: false
     t.boolean "completed"
     t.datetime "completed_at"
     t.bigint "todo_list_id", null: false

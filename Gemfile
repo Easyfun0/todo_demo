@@ -60,3 +60,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "tailwindcss-rails", "~> 2.0"
 
 gem "stimulus_reflex", "~> 3.4"
+
+gem "warden", "~> 1.2"
