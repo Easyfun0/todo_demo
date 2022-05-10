@@ -2,7 +2,15 @@
 
 class TodoItemReflex < ApplicationReflex
 
+  def todo_complete
+    todo_item = TodoItem.find(element.dataset.id)
+    todo_item.update(complete: true, completed_at: Time.now)
+  end
 
+  def todo_incomplete
+      todo_item = TodoItem.find(element.dataset.id)
+      todo_item.update(complete: false, completed_at: nil)
+  end
   # Add Reflex methods in this file.
   #
   # All Reflex instances include CableReady::Broadcaster and expose the following properties:
